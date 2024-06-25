@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NGOCXMHT_Identity.props" />
+</Project>
