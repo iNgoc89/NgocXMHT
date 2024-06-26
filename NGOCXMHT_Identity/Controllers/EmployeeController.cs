@@ -27,7 +27,7 @@ namespace NGOCXMHT_Identity.Controllers
         {
             return View(await _context.Employee.ToListAsync());
         }
- [Authorize]
+ [Authorize(Roles = "Employee")]
         // GET: Employee/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,7 +45,7 @@ namespace NGOCXMHT_Identity.Controllers
 
             return View(employee);
         }
- [Authorize]
+ [Authorize(Roles = "Admin")]
         // GET: Employee/Create
         public IActionResult Create()
         {

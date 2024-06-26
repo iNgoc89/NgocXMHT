@@ -1,17 +1,30 @@
-@model IEnumerable<NGOCXMHT_Identity.Models.ApplicationUser>
+@using Microsoft.AspNetCore.Identity
+@using NGOCXMHT_Identity.Models.ViewModels
+@model IEnumerable<UserWithRoleVM>
 <table class="table">
     <thead>
         <tr>
-            <th>FullName</th>
-            <th>Email</th>
+            <th>UserName</th>
+            <th>Role</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var userWithRoles in Model)
         {
             <tr>
-                <td>@item.FullName</td>
-                <td>@item.Email</td>
+                <td>@userWithRoles.User.UserName</td>
+                <td>
+                    @foreach (var role in userWithRoles.Roles)
+                    {
+                        <span>@role,</span>
+                        <br/>
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Account" asp-action="AssignRole" asp-route-userId="@userWithRoles.User.Id">Assign
+                        Role</a> 
+                </td>
             </tr>
         }
     </tbody>

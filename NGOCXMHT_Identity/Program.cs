@@ -15,8 +15,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    builder.Services.AddRazorPages();
+        builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
 builder.Services.AddControllersWithViews();
 
@@ -53,8 +55,9 @@ builder.Services.AddControllersWithViews();
 
         options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 
-        options.LoginPath = "/Identity/Account/Login";
-        options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+        options.LoginPath = $"/Identity/Account/Login";
+        options.LoginPath = $"/Identity/Account/Logout";
+        options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
         options.SlidingExpiration = true;
     });
 
@@ -74,7 +77,9 @@ using   (var scope = app.Services.CreateScope()){
     var services = scope.ServiceProvider;
     var seeder = services.GetRequiredService<EmployeeSeeder>();
     seeder.SeedEmployees(1000);
-}
+        }
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
