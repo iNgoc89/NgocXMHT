@@ -1,0 +1,18 @@
+@model IEnumerable<NGOCXMHT_Identity.Models.ApplicationUser>
+<table class="table">
+    <thead>
+        <tr>
+            <th>FullName</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

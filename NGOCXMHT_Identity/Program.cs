@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using NGOCXMHT_Identity.Data;
-using NGOCPX;
 using NGOCXMHT_Identity.Models;
+using NGOCXMHT_Identity.Models.Process;
+using NuGet.Packaging.Signing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +17,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
+
+
   builder.Services.Configure<IdentityOptions>(options =>
     {
         // Password settings.
@@ -40,19 +46,40 @@ builder.Services.AddControllersWithViews();
     {
         // Cookie settings
         options.Cookie.HttpOnly = true;
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+        //Chi gui cookie qua https
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        //Giam thieu rui ro CSRF
+        options.Cookie.SameSite = SameSiteMode.Lax;
+
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 
         options.LoginPath = "/Identity/Account/Login";
         options.AccessDeniedPath = "/Identity/Account/AccessDenied";
         options.SlidingExpiration = true;
     });
 
-var app = builder.Build();
+    builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(@"./keys"))
+    .SetApplicationName("NGOCXMHT_Identity")
+    .SetDefaultKeyLifetime(TimeSpan.FromDays(14));
 
+    builder.Services.AddOptions();
+    var mailSettings = builder.Configuration.GetSection("MailSettings");
+    builder.Services.Configure<MailSettings>(mailSettings);
+    builder.Services.AddTransient<IEmailSender, SendMailService>();
+
+    builder.Services.AddTransient<EmployeeSeeder>();
+var app = builder.Build();
+using   (var scope = app.Services.CreateScope()){
+    var services = scope.ServiceProvider;
+    var seeder = services.GetRequiredService<EmployeeSeeder>();
+    seeder.SeedEmployees(1000);
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    
 }
 else
 {

@@ -287,3 +287,7 @@ D:\Vicem\NGOCXMHT\NGOCXMHT_Identity\obj\Debug\net8.0\refint\NGOCXMHT_Identity.dl
 D:\Vicem\NGOCXMHT\NGOCXMHT_Identity\obj\Debug\net8.0\NGOCXMHT_Identity.pdb
 D:\Vicem\NGOCXMHT\NGOCXMHT_Identity\obj\Debug\net8.0\NGOCXMHT_Identity.genruntimeconfig.cache
 D:\Vicem\NGOCXMHT\NGOCXMHT_Identity\obj\Debug\net8.0\ref\NGOCXMHT_Identity.dll
+D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\MailKit.dll
+D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\MimeKit.dll
+D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\Bogus.dll
