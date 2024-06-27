@@ -186,6 +186,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/Account/AddClaim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRDbGFpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/Account/AssignRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBc3NpZ25Sb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -220,6 +224,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/MemberUnit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyVW5pdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/MemberUnit/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyVW5pdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/MemberUnit/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyVW5pdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/MemberUnit/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyVW5pdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/MemberUnit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyVW5pdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/Role/AssignClaim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxBc3NpZ25DbGFpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/VICEM/NgocXMHT/NGOCXMHT_Identity/Views/Role/Create.cshtml]

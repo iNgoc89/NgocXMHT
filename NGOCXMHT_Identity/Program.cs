@@ -61,6 +61,16 @@ builder.Services.AddControllersWithViews();
         options.SlidingExpiration = true;
     });
 
+        builder.Services.AddAuthorization(options =>
+        {
+            foreach (var permission in Enum.GetValues(typeof(SystemPermissions)).Cast<SystemPermissions>())
+            {
+                options.AddPolicy(permission.ToString(), policy =>
+                    policy.RequireClaim("Permission", permission.ToString()));
+            }
+        
+        });
+
     builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(@"./keys"))
     .SetApplicationName("NGOCXMHT_Identity")
@@ -72,12 +82,20 @@ builder.Services.AddControllersWithViews();
     builder.Services.AddTransient<IEmailSender, SendMailService>();
 
     builder.Services.AddTransient<EmployeeSeeder>();
+
+    builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+    {
+        googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+        googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    });
 var app = builder.Build();
 using   (var scope = app.Services.CreateScope()){
     var services = scope.ServiceProvider;
     var seeder = services.GetRequiredService<EmployeeSeeder>();
     seeder.SeedEmployees(1000);
-        }
+        };
+
+     
 
 
 // Configure the HTTP request pipeline.

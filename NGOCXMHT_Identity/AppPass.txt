@@ -1,1 +1,8 @@
+//key gmail
 hsia lige gegl xufa
+
+//Google clienId
+1034437381109-7uci0scesk90jer970afnmiem46t7rhc.apps.googleusercontent.com
+
+//Google clien secrets
+sbSEx1E6UKJbw3Vay9Hr6pg5

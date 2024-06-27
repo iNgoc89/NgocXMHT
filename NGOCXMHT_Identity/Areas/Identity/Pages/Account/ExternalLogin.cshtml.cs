@@ -85,6 +85,9 @@ namespace NGOCXMHT_Identity.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+              [Required]
+        
+            public string FullName { get; set; }
         }
         
         public IActionResult OnGet() => RedirectToPage("./Login");
@@ -153,7 +156,7 @@ namespace NGOCXMHT_Identity.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-
+                user.FullName = Input.FullName;
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
