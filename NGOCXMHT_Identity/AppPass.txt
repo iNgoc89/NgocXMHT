@@ -2,7 +2,13 @@
 hsia lige gegl xufa
 
 //Google clienId
-1034437381109-7uci0scesk90jer970afnmiem46t7rhc.apps.googleusercontent.com
+dotnet user-secrets set "Authentication:Google:ClientId" "1034437381109-7uci0scesk90jer970afnmiem46t7rhc.apps.googleusercontent.com”
 
 //Google clien secrets
-sbSEx1E6UKJbw3Vay9Hr6pg5
+dotnet user-secrets set "Authentication:Google:ClientSecret" "sbSEx1E6UKJbw3Vay9Hr6pg5”
+
+//facebook clienId
+dotnet user-secrets set "Authentication:Facebook:ClientId" "486820890395468”
+
+//facebook clien secrets
+dotnet user-secrets set "Authentication:Facebook:ClientSecret" "15a0e3e010014ea80f3b6ed7106c3a8b"

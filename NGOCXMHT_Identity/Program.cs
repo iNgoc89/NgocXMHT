@@ -83,10 +83,16 @@ builder.Services.AddControllersWithViews();
 
     builder.Services.AddTransient<EmployeeSeeder>();
 
-    builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+    builder.Services.AddAuthentication()
+    .AddGoogle(googleOptions =>
     {
         googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
         googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    })
+    .AddFacebook(facebookOptions =>
+    {
+        facebookOptions.ClientId = builder.Configuration["Authentication:Facebook:ClientId"];
+        facebookOptions.ClientSecret = builder.Configuration["Authentication:Facebook:ClientSecret"];
     });
 var app = builder.Build();
 using   (var scope = app.Services.CreateScope()){

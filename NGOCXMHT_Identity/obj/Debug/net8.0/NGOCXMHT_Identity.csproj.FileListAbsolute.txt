@@ -292,3 +292,4 @@ D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\MailKit.dll
 D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\MimeKit.dll
 D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\Bogus.dll
 D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\VICEM\NgocXMHT\NGOCXMHT_Identity\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll

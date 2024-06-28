@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NGOCXMHT_Identity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0fb2e2c39ddbf2b4992684c010ed45fd26c4ad5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b486a59d7dfe1cfdce773041ee97d3107f85d1d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("NGOCXMHT_Identity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NGOCXMHT_Identity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
